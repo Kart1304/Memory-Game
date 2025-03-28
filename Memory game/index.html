@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Card Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-brain"></i> Memory Card Game</h1>
+            <div class="theme-toggle">
+                <i class="fas fa-sun"></i>
+                <label class="switch">
+                    <input type="checkbox" id="theme-switch">
+                    <span class="slider round"></span>
+                </label>
+                <i class="fas fa-moon"></i>
+            </div>
+        </header>
+        
+        <main>
+            <div class="game-info">
+                <div class="info-item">
+                    <span class="info-label">Time:</span>
+                    <span id="time" class="info-value">00:00</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Moves:</span>
+                    <span id="moves" class="info-value">0</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Score:</span>
+                    <span id="score" class="info-value">0</span>
+                </div>
+            </div>
+            
+            <div class="game-controls">
+                <div class="difficulty-selector">
+                    <label for="difficulty">Difficulty:</label>
+                    <select id="difficulty">
+                        <option value="easy">Easy (4x3)</option>
+                        <option value="medium" selected>Medium (4x4)</option>
+                        <option value="hard">Hard (6x4)</option>
+                    </select>
+                </div>
+                <button id="start-btn" class="btn primary-btn">Start Game</button>
+                <button id="restart-btn" class="btn secondary-btn" disabled>Restart</button>
+            </div>
+            
+            <div id="game-board" class="game-board">
+                <!-- Cards will be generated here -->
+                <div class="start-screen">
+                    <h2>Memory Card Game</h2>
+                    <p>Test your memory by matching pairs of cards.</p>
+                    <p>Select a difficulty level and click "Start Game" to begin!</p>
+                </div>
+            </div>
+        </main>
+        
+        <div id="game-over-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Game Over!</h2>
+                    <span class="close-modal">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="result-container">
+                        <div class="result-item">
+                            <span class="result-label">Time:</span>
+                            <span id="result-time" class="result-value">00:00</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Moves:</span>
+                            <span id="result-moves" class="result-value">0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Score:</span>
+                            <span id="result-score" class="result-value">0</span>
+                        </div>
+                    </div>
+                    <div id="high-score-message" class="high-score-message">
+                        New High Score!
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="play-again-btn" class="btn primary-btn">Play Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
